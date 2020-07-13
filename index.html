@@ -8,13 +8,13 @@
 
     <body>
         <h1>Caleb Grant</h1>
+        <div style="text-align: center; margin-top: -40px; margin-bottom: 30px; font-family: Comic Sans MS, cursive, sans-serif;">Geologist / Data Manager with a demonstrated history in the environmental services industry.<br>
+                Expertise in GIS, Python, JavaScript, HTML, and Database Management Systems.</div>
 
         <div class="navbar">
             <a href="https://geocoug.github.io/">Home</a>
             <a style="background-color:#465c4f;">||</a>
-            <a href="https://github.com/geocoug" target="_blank">GitHub Repos</a>
-            <a style="background-color:#465c4f;">||</a>
-            <a href="./westernstates.html" target="_blank">Western States Consulting</a>
+            <a href="https://github.com/geocoug?tab=repositories" target="_blank">GitHub Repos</a>
             <!-- <a style="background-color:#465c4f;">||</a> -->
             <!-- <div class="dropdown">
                 <button class="dropbtn">Database
@@ -52,22 +52,14 @@
             </div> -->
 
            <!-- <div class="dropdown">
-                <button class="dropbtn">Streams
+                <button class="dropbtn">Name
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="https://sportsurge.net/#/groups/0" target="_blank">Multi-Sport 1</a>
-                    <a href="http://www.streameast.live/" target="_blank">Multi-Sport 2</a>
-                    <a href="http://onhockey.tv/" target="_blank">Hockey 1</a>
-                    <a href="https://www.nhlstreams100.com/" target="_blank">Hockey 2</a>
-                    <a href="https://www.mlb.com/live-stream-games" target="_blank">MLB</a>
-                    <a href="https://www.reddit.com/r/ncaaBBallStreams/" target="_blank">NCAA Basketball</a>
-                    <a href="http://nba-streams.xyz/schedule/" target="_blank">NBA</a>
-                    <a href="https://home.nflbite.com/" target="_blank">NFL</a>
                 </div>
             </div> -->
 
-            <a style="background-color:#465c4f;">||</a>
+            <!-- <a style="background-color:#465c4f;">||</a>
             <div class="dropdown">
                 <button class="dropbtn">Whistler
                     <i class="fa fa-caret-down"></i>
@@ -76,7 +68,7 @@
                     <a href="./whistler1.html" target="_blank">Whistler 1</a>
                     <a href="./whistler2.html" target="_blank">Whistler 2</a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <a style="background-color:#465c4f;">||</a>
 
@@ -93,8 +85,7 @@
             </div> -->
         </div>
 
-        <br>
-        <br>
+
 
         <div class="body-content">
             <div class="left-body">
@@ -103,7 +94,9 @@
                     <li><a href="#summary">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <ul>
-                        <li><a href="#mhk-env">mhk-env</a></li>
+                        <li><a href="#mhk-env">MHK-env</a></li>
+                        <li><a href="#wsc">Western States</a></li>
+                        <li><a href="#whistler">Whistler Stream</a></li>
                         <li><a href="#esri-web-app">ArcGIS Web App</a></li>
                     </ul>
                     <li><a href="#contact">Contact</a></li>
@@ -114,23 +107,51 @@
             </div>
             <div class="right-body">
                 <h2 id="summary" style="text-align: center;">Summary</h2>
-                <p style="text-align: center;">Geologist / Data Manager with a demonstrated history in the environmental services industry.<br>
-                    Expertise in GIS, Python, JavaScript, HTML, and Database Management Systems.</p>
+                <p style="text-align: center;">This page is dedicated to my personal projects and is currently under development.</p>
 
                 <div class="spacer-line-big"></div>
 
                 <h2 id="projects" style="text-align: center;">Projects</h2>
-                    <h4 id="mhk-env" style="text-align: center;">MHK-env</h4>
-                    <a href="http://mhk-env.us/index.html" target="_blank">visit mhk-env</a>
-                    <div class="spacer-line-small"></div>
-                    <h4 id="esri-web-app" style="text-align: center;">ArcGIS Web Apps</h4>
-                    <a href="http://pbs-env.maps.arcgis.com/apps/webappviewer/index.html?id=058be1be67f549389f1968cb9074c763" target="_blank">visit web app</a>
+                <div class="project-tile-container">
+                    <div class="project-tile" id="mhk-env">
+                        <h4 class="proj-title">MHK-env</h4>
+                            <div class="proj-desc">Description</div>
+                            <a href="http://mhk-env.us/index.html" target="_blank">
+                                <image src="./static/mhk.png" id="mhk-img"></image>
+                            </a>
+                            <a href="http://mhk-env.us/regs.html" target="_blank">
+                                <image src="./static/mhk2.png" id="mhk-img2"></image>
+                            </a>
+                    </div>
+
+                    <div class="project-tile" id="wsc">
+                        <h4 class="proj-title">Western States Consulting</h4>
+                            <div class="proj-desc">Description</div>
+                            <a href="./westernstates.html" target="_blank">
+                                <image src="./static/wsc.png" id="wsc-img"></image>
+                            </a>
+                    </div>
+
+                    <div class="project-tile" id="whistler">
+                        <h4 class="proj-title">Whistler Streams</h4>
+                            <div class="proj-desc">Description</div>
+                            <a href="./whistler1.html" target="_blank">
+                                <image src="./static/whistler.png" id="whistler-img"></image>
+                            </a>
+                    </div>
+
+                    <div class="project-tile" id="esri-web-app">
+                        <h4 class="proj-title">ArcGIS Web Apps</h4>
+                            <div class="proj-desc">Description</div>
+                            <a href="http://pbs-env.maps.arcgis.com/apps/webappviewer/index.html?id=058be1be67f549389f1968cb9074c763" target="_blank">
+                                <image src="./static/esri-app.png" id="esri-img"></image>
+                            </a>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div style="clear: both;"></div>
-        <br>
-        <br>
           <div id="footer-container">
             <div id="footer">
               <div id="contact">
