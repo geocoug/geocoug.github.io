@@ -14,8 +14,16 @@ jQuery.fn.loadRepositories = function(username) {
         target.empty().append(list);
         $(repos).each(function() {
             if (this.name != (username.toLowerCase()+'.github.com')) {
-                list.append('<dt><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
-                // list.append('<dd>' + this.description +'</dd>');
+		            if (this.name == 'geocoug.github.io') {}
+		            else {
+                  list.append('<dt><strong><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a></strong> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
+                  if (this.description == null) {
+                    list.append('<dd style="margin-bottom:10px;"></dd>')
+                  }
+                  else {
+                    list.append('<dd style="margin-bottom:10px;">' + this.description +'</dd>');
+                  }
+                }
             }
         });
       });
