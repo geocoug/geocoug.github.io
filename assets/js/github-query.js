@@ -18,10 +18,10 @@ jQuery.fn.loadRepositories = function(username) {
 		            else {
                   list.append('<dt><strong><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a></strong> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
                   if (this.description == null) {
-                    list.append('<dd style="margin-top:10px;"></dd>')
+                    list.append('<dd style="margin-bottom:20px;"></dd>')
                   }
                   else {
-                    list.append('<dd style="margin-top:10px;">' + this.description +'</dd>');
+                    list.append('<dd style="margin-bottom:20px;">' + this.description +'</dd>');
                   }
                 }
             }
