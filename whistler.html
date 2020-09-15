@@ -185,15 +185,13 @@
     <script type="text/javascript">
         n = new Date();
         y = n.getFullYear();
-        m = n.getMonth();
+        m = n.getMonth() + 1; // returns (0-11). January = 0
         d = n.getDate();
         h = n.getHours();
+
         var h1;
         var h2;
         var h3;
-        var ampm1;
-        var ampm2;
-        var ampm3;
 
         if (d<10) {d = '0' + d;}
         if (m<10) {m = '0' + m;}
@@ -214,9 +212,6 @@
             h1 = h;
             h2 = h;
             h3 = h;
-            ampm1 = "am";
-            ampm2 = "am";
-            ampm3 = "am";
         }
         document.getElementById("seventh-a").src = "https://whistlerpeak.com/wx_img/seventh/" + y + "-" + m + "-" + d + "-" + h1 + ".jpg";
         document.getElementById("seventh-b").src = "https://whistlerpeak.com/wx_img/seventh/" + y + "-" + m + "-" + d + "-" + h2 + ".jpg";
