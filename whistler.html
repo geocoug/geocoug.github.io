@@ -3,21 +3,25 @@
     <head>
         <title>Whistler Stream</title>
         <meta charset="utf-8">
-		<meta http-equiv="refresh" content="1800">
+		<!-- <meta http-equiv="refresh" content="1800"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/9d6352f212.js" crossorigin="anonymous"></script>
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="assets/css/whistler.css" type="text/css" />
     </head>
 
 <body>
 
+    <!-- <div id="navbar">
+        <a class="active" href="https://geocoug.github.io">Home</a>
+        <a href="#whistler-live">Live Stream</a>
+        <a href="#whistler-cams" onclick="">Whistler Cams</a>
+        <a href="#blackcomb-cams">Blackcomb Cams</a>
+    </div> -->
 
-    <div class="container">
+    <div class="main-container">
 
-        <h2 class="collapsible"><span class="whistler-collapse fas fa-angle-up" style="margin-right:15px;"></span>Whistler - Live Stream<span class="whistler-collapse fas fa-angle-up" style="margin-left:15px;"></span></h2>
+        <h2 class="collapsible" id="whistler-live"><span class="whistler-collapse fas fa-angle-up" style="margin-right:15px;"></span>Whistler - Live Stream<span class="whistler-collapse fas fa-angle-up" style="margin-left:15px;"></span></h2>
             <div class="content-section" style="display:block;">
-            <!-- <h2>Whistler - Live Stream</h2> -->
 
                 <div class="row">
                     <div class="video-container">
@@ -29,7 +33,12 @@
                 </div>
 
 
-                <div class="row">
+                <div id="widgets-show-hide">
+                    <button id="widget-btn" type="button" name="button" onclick="showWidgets()">Show Widgets</button>
+                </div>
+
+
+                <div class="row" id="z-widgets">
                     <!-- Column 1 widget container -->
                     <div class="weather-widget">
                         <center>
@@ -59,7 +68,8 @@
 
 
 
-        <h3 class="collapsible"><span class="whistler-collapse fas fa-angle-down" style="margin-right:15px;"></span>Whistler Cams<span class="whistler-collapse fas fa-angle-down" style="margin-left:15px;"></span></h3>
+        <h3 class="collapsible" id="whistler-cams"><span class="whistler-collapse fas fa-angle-down" style="margin-right:15px;"></span>Whistler Cams<span class="whistler-collapse fas fa-angle-down" style="margin-left:15px;"></span></h3>
+        <!-- <h3 class="collapsible" id="whistler-cams">Whistler Cams</h3> -->
             <div class="content-section">
 
                 <div class="row">
@@ -76,6 +86,24 @@
                 	<div class="photo-grid" style="background-color:#ddd;">
                     	<img src="https://common.snow.com/mtncams/wbsnowstake.jpg" style="width:100%" loading="lazy" alt="loading...">
                     	<div class="text">Snow Ruler</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                	<div class="photo-grid" style="background-color:#ddd;">
+                    	<img src="https://common.snow.com/Mtncams/emerald2.jpg" style="width:100%" loading="lazy" alt="loading...">
+                    	<div class="text">Emerald</div>
+                    </div>
+
+                	<div class="photo-grid" style="background-color:#ddd;">
+                    	<img src="https://common.snow.com/Mtncams/big_red2.jpg" style="width:100%" loading="lazy" alt="loading...">
+                    	<div class="text">Big Red</div>
+                    </div>
+
+                	<div class="photo-grid" style="background-color:#ddd;">
+                    	<img src="https://common.snow.com/Mtncams/valley_south2.jpg" style="width:100%" loading="lazy" alt="loading...">
+                    	<div class="text">Valley South</div>
                     </div>
                 </div>
 
@@ -122,7 +150,7 @@
 
 
 
-        <h3 class="collapsible"><span class="whistler-collapse fas fa-angle-down" style="margin-right:15px;"></span>Blackcomb Cams<span class="whistler-collapse fas fa-angle-down" style="margin-left:15px;"></span></h3>
+        <h3 class="collapsible" id="blackcomb-cams"><span class="whistler-collapse fas fa-angle-down" style="margin-right:15px;"></span>Blackcomb Cams<span class="whistler-collapse fas fa-angle-down" style="margin-left:15px;"></span></h3>
             <div class="content-section">
 
                 <div class="row">
@@ -240,6 +268,19 @@
       });
     }
     </script>
+
+    <script>
+    function showWidgets() {
+        if (document.getElementById('z-widgets').style.display === "none") {
+            document.getElementById('z-widgets').style.display = "block";
+            document.getElementById('widget-btn').innerHTML = "Hide Widgets";
+        } else {
+            document.getElementById('z-widgets').style.display = "none";
+            document.getElementById('widget-btn').innerHTML = "Show Widgets";
+        }
+    }
+    </script>
+
 
 </body>
 </html>

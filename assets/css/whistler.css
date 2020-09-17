@@ -68,7 +68,7 @@ h3 {
     overflow: hidden;
 }
 
-.container {
+.main-container {
     width: 100%;
 }
 
@@ -128,4 +128,8 @@ h3 {
     text-align: center;
     width: 33.33%;
     padding: 10px;
+}
+
+#z-widgets {
+    display: none;
 }
