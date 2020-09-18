@@ -64,8 +64,9 @@ h3 {
 }
 
 .content-section {
-    display: none;
+    /* display: none; */
     overflow: hidden;
+    align: center;
 }
 
 .main-container {
@@ -130,6 +131,6 @@ h3 {
     padding: 10px;
 }
 
-#z-widgets {
+/* #z-widgets {
     display: none;
-}
+} */
