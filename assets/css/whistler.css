@@ -64,29 +64,19 @@ h3 {
 }
 
 .content-section {
-    /* display: none; */
     overflow: hidden;
     align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .main-container {
     width: 100%;
 }
 
-.spacer {
-    height: 20px;
-    width: 100%;
-}
-
-.row {
-    width: 100%;
-    height: auto;
-}
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.img-grid {
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .video-container {
@@ -100,37 +90,3 @@ h3 {
     height: 388px;
     width: 100%;
 }
-
-.weather-widget {
-    float: left;
-    width: 25%;
-    height: auto;
-    margin: auto;
-    padding: 10px;
-}
-
-.map-widget {
-    float: left;
-    width: 50%;
-    padding: 10px;
-}
-
-.snow-widgets {
-    float: left;
-    width: 25%;
-    height: auto;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-}
-
-.photo-grid {
-    float: left;
-    text-align: center;
-    width: 33.33%;
-    padding: 10px;
-}
-
-/* #z-widgets {
-    display: none;
-} */
