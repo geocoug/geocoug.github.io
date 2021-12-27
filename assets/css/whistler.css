@@ -80,10 +80,7 @@ h3 {
 }
 
 .video-container {
-    float: left;
-    text-align: center;
-    width: 50%;
-    padding: 10px;
+    padding: 7px;
 }
 
 .video-frame {

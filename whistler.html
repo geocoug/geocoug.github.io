@@ -29,38 +29,40 @@
             <a class="nav-item nav-link" id="nav-whistler-tab" data-toggle="tab" href="#nav-whistler" role="tab" aria-controls="nav-whistler" aria-selected="false">Whistler Cams</a>
             <a class="nav-item nav-link" id="nav-blackcomb-tab" data-toggle="tab" href="#nav-blackcomb" role="tab" aria-controls="nav-blackcomb" aria-selected="false">Blackcomb Cams</a>
         </div>
-        <span class="navbar-text"><a class="btn btn-dark" href="https://www.whistlerblackcomb.com/">whistlerblackcomb.com</a></span>
+        <span class="navbar-text"><a class="btn btn-dark" href="https://secure.whistlerblackcomb.com/TomPDF/Default.aspx?Season=1&Type=bg">Download Snow Report</a></span>
     </nav>
 
     <center>
         <div class="tab-content" id="nav-tabContent">
 
+
+            <!--https://weatherwidget.io/-->
+            <div>
+                <a class="weatherwidget-io" href="https://forecast7.com/en/50d12n122d96/whistler/?unit=us" data-label_1="WHISTLER" data-label_2="WEATHER" data-theme="weather_one" >WHISTLER WEATHER</a>
+                <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
+            </div>
+
+
             <div class="tab-pane fade show active" id="nav-live" role="tabpanel" aria-labelledby="nav-live-tab">
 
                 <div class="content-section" style="display:block; background-color:#ddd;">
 
-                    <div class="row">
-                        <div class="video-container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 video-container">
                             <iframe class="video-frame" src="https://www.youtube.com/embed/UrMyKCCgiyw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen align="middle"
                                 frameborder="0"></iframe>
                         </div>
-                        <div class="video-container">
+                        <div class="col-lg-6 video-container">
                             <iframe class="video-frame" src="https://www.youtube.com/embed/BJZau3OSXA8?auoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen align="middle"
                                 frameborder="0"></iframe>
                         </div>
                     </div>
 
-                    <!--https://weatherwidget.io/-->
-                    <div style="margin-bottom: 10px;">
-                        <a class="weatherwidget-io" href="https://forecast7.com/en/50d12n122d96/whistler/?unit=us" data-label_1="WHISTLER" data-label_2="WEATHER" data-theme="weather_one" >WHISTLER WEATHER</a>
-                        <script>
-                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                        </script>
-                    </div>
-
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Actual map widget -->
+                        <div class="col-lg-8 video-container">
+                            <!-- Map widget -->
                             <iframe width="100%" height="385" allowfullscreen="" src="https://fatmap.com/activity/pistes/@50.112,-122.9514" frameborder=""></iframe>
                         </div>
                     </div>
