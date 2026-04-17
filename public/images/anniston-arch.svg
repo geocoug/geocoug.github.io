@@ -1,0 +1,110 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-grad)" rx="12"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="16" fill="#94a3b8">Anniston Soil Management Portal — Architecture</text>
+
+  <!-- ===== ROW 1: Client ===== -->
+  <!-- Shiny Frontend -->
+  <rect x="300" y="65" width="200" height="50" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="400" y="87" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="13" fill="#e2e8f0">Shiny R Frontend</text>
+  <text x="400" y="103" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Interactive Mapping UI</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="115" x2="400" y2="150" stroke="url(#line-grad)" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="394,147 400,157 406,147" fill="#38bdf8" fill-opacity="0.6"/>
+
+  <!-- ===== ROW 2: Django REST API (main box) ===== -->
+  <rect x="175" y="160" width="450" height="105" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="400" y="183" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#38bdf8">Django REST API</text>
+
+  <!-- Sub-modules inside API box -->
+  <!-- Auth -->
+  <rect x="195" y="195" width="95" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="242" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="11" fill="#cbd5e1">JWT Auth</text>
+  <text x="242" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Token-based</text>
+  <text x="242" y="242" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">access control</text>
+
+  <!-- Spatial Analysis -->
+  <rect x="303" y="195" width="115" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="360" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="11" fill="#cbd5e1">Spatial Analysis</text>
+  <text x="360" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Grid generation</text>
+  <text x="360" y="242" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">IDW, Delaunay, NN</text>
+
+  <!-- Decision Engine -->
+  <rect x="430" y="195" width="105" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="482" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="11" fill="#cbd5e1">Decision Logic</text>
+  <text x="482" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">PCB classification</text>
+  <text x="482" y="242" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Disposal routing</text>
+
+  <!-- Report Gen -->
+  <rect x="548" y="195" width="65" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="580" y="218" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="11" fill="#cbd5e1">PDF</text>
+  <text x="580" y="233" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Reports</text>
+
+  <!-- ===== ROW 3: Data layer ===== -->
+  <!-- Arrows down from API -->
+  <line x1="300" y1="265" x2="300" y2="310" stroke="url(#line-grad)" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="294,307 300,317 306,307" fill="#38bdf8" fill-opacity="0.6"/>
+
+  <line x1="500" y1="265" x2="500" y2="310" stroke="url(#line-grad)" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="494,307 500,317 506,307" fill="#a78bfa" fill-opacity="0.6"/>
+
+  <!-- PostgreSQL / PostGIS -->
+  <rect x="195" y="320" width="210" height="55" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="300" y="343" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="13" fill="#34d399">PostgreSQL + PostGIS</text>
+  <text x="300" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Chemistry, Parcels, Spatial Queries</text>
+
+  <!-- Celery / Redis -->
+  <rect x="430" y="320" width="175" height="55" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="517" y="343" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="13" fill="#a78bfa">Celery + Redis</text>
+  <text x="517" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Async Report Generation</text>
+
+  <!-- ===== Labels / Tags ===== -->
+  <!-- Python tag -->
+  <rect x="30" y="185" width="70" height="24" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="65" y="201" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">Python</text>
+
+  <!-- REST tag -->
+  <rect x="30" y="218" width="70" height="24" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="65" y="234" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">REST API</text>
+
+  <!-- GIS tag -->
+  <rect x="700" y="185" width="70" height="24" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="735" y="201" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">GIS</text>
+
+  <!-- Docker tag -->
+  <rect x="700" y="218" width="70" height="24" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="735" y="234" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a78bfa">Docker</text>
+
+  <!-- Connecting lines from tags -->
+  <line x1="100" y1="197" x2="175" y2="210" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="100" y1="230" x2="175" y2="225" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="700" y1="197" x2="625" y2="210" stroke="#34d399" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="700" y1="230" x2="625" y2="225" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Bottom attribution -->
+  <text x="400" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Geospatial Decision Support System — PCB Soil Remediation</text>
+</svg>

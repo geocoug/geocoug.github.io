@@ -4,6 +4,6 @@ description: "CLI for aggregating Apple Health and SleepCycle data into a local 
 url: "https://github.com/geocoug/vitalog"
 github: "https://github.com/geocoug/vitalog"
 tags: ["Python", "DuckDB", "D3.js", "Claude AI"]
-featured: true
+featured: false
 order: 3
 ---

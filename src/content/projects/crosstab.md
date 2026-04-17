@@ -5,6 +5,6 @@ image: "https://raw.githubusercontent.com/geocoug/crosstab/main/crosstab-output.
 url: "https://github.com/geocoug/crosstab"
 github: "https://github.com/geocoug/crosstab"
 tags: ["Python", "CLI", "Data Processing"]
-featured: true
+featured: false
 order: 8
 ---

@@ -45,8 +45,10 @@
           <path d="M19 9l-7 7-7-7" />
         </svg>
       </a>
-      <a href="#about" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm text-slate-400 border border-slate-700 hover:border-accent-400 hover:text-accent-400 transition-all duration-200">
-        About Me
+      <a href="#about" class="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm text-slate-300 border border-slate-600 hover:text-white transition-all duration-300 overflow-hidden hover:border-transparent hover:shadow-lg hover:shadow-accent-500/10">
+        <span class="absolute inset-0 bg-gradient-to-r from-accent-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+        <span class="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(to right, var(--color-accent-400), var(--color-violet-400)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; padding: 1px;"></span>
+        <span class="relative">About Me</span>
       </a>
     </div>
   </div>
@@ -57,8 +59,8 @@
     const roles = [
       "Data Engineer",
       "Full-Stack Developer",
-      "Open Source Builder",
-      "Pipeline Architect",
+      "Geospatial Developer",
+      "Data Plumber",
     ];
 
     const roleEl = document.getElementById("hero-role");

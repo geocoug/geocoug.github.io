@@ -1,0 +1,45 @@
+---
+---
+
+<button
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+  class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 text-slate-400 hover:text-accent-400 hover:border-accent-400/30 shadow-lg transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+>
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<script>
+  function initBackToTop() {
+    const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+
+    const footer = document.querySelector("footer");
+
+    const toggle = () => {
+      const pastThreshold = window.scrollY > 400;
+      let footerVisible = false;
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        footerVisible = rect.top < window.innerHeight;
+      }
+      const show = pastThreshold && !footerVisible;
+      btn.classList.toggle("opacity-0", !show);
+      btn.classList.toggle("translate-y-4", !show);
+      btn.classList.toggle("pointer-events-none", !show);
+      btn.classList.toggle("opacity-100", show);
+      btn.classList.toggle("translate-y-0", show);
+      btn.classList.toggle("pointer-events-auto", show);
+    };
+
+    window.addEventListener("scroll", toggle, { passive: true });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    toggle();
+  }
+
+  initBackToTop();
+  document.addEventListener("astro:after-swap", initBackToTop);
+</script>

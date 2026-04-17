@@ -15,12 +15,12 @@ import Logo from "./Logo.astro";
       </a>
 
       <div class="flex items-center gap-6">
-        <!-- Nav links with hover pill -->
+        <!-- Nav links — desktop -->
         <div class="hidden sm:flex items-center gap-1">
-          <a href="#about" class="nav-link relative px-3 py-1.5 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">
+          <a href="#about" class="nav-link relative px-3 py-1.5 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50" data-section="about">
             About
           </a>
-          <a href="#projects" class="nav-link relative px-3 py-1.5 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">
+          <a href="#projects" class="nav-link relative px-3 py-1.5 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50" data-section="projects">
             Projects
           </a>
         </div>
@@ -28,7 +28,7 @@ import Logo from "./Logo.astro";
         <!-- Divider -->
         <div class="hidden sm:block w-[1px] h-5 bg-slate-700/50"></div>
 
-        <!-- Social icons with pill backgrounds on hover -->
+        <!-- Social + theme + mobile menu -->
         <div class="flex items-center gap-1">
           <a
             href="https://github.com/geocoug"
@@ -46,7 +46,7 @@ import Logo from "./Logo.astro";
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn"
-            class="p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200"
+            class="hidden sm:block p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200"
           >
             <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -55,15 +55,78 @@ import Logo from "./Logo.astro";
           <a
             href="mailto:grantcaleb22@gmail.com"
             aria-label="Email"
-            class="p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200"
+            class="hidden sm:block p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200"
           >
             <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </a>
           <ThemeToggle />
+
+          <!-- Mobile hamburger -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Toggle menu"
+            class="sm:hidden p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200"
+          >
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="sm:hidden hidden backdrop-blur-xl bg-slate-950/90 border-b border-slate-800/50">
+    <div class="px-6 py-4 space-y-1">
+      <a href="#about" class="mobile-nav-link block px-3 py-2 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors">About</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50 transition-colors">Projects</a>
+      <div class="h-[1px] bg-slate-800/50 my-2"></div>
+      <div class="flex items-center gap-2 px-3 py-1">
+        <a href="https://www.linkedin.com/in/caleb-grant-04b098101" target="_blank" rel="noopener" aria-label="LinkedIn" class="p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200">
+          <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="mailto:grantcaleb22@gmail.com" aria-label="Email" class="p-2 rounded-lg text-slate-400 hover:text-accent-400 hover:bg-slate-800/50 transition-all duration-200">
+          <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 </nav>
+
+<script>
+  function initMobileMenu() {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("menu-icon-open");
+    const iconClose = document.getElementById("menu-icon-close");
+
+    btn?.addEventListener("click", () => {
+      const open = menu?.classList.toggle("hidden") === false;
+      iconOpen?.classList.toggle("hidden", open);
+      iconClose?.classList.toggle("hidden", !open);
+    });
+
+    // Close menu on link click
+    menu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        iconOpen?.classList.remove("hidden");
+        iconClose?.classList.add("hidden");
+      });
+    });
+  }
+
+  initMobileMenu();
+  document.addEventListener("astro:after-swap", initMobileMenu);
+</script>

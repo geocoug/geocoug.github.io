@@ -329,6 +329,26 @@
 }
 
 @layer utilities {
+  /* Active nav link */
+  .nav-active {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  [data-theme="light"] .nav-active {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--color-slate-900) !important;
+  }
+
+  /* Back to top — light mode */
+  [data-theme="light"] #back-to-top {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: var(--color-slate-200);
+    color: var(--color-slate-500);
+  }
+  [data-theme="light"] #back-to-top:hover {
+    color: var(--color-accent-600);
+    border-color: rgba(14, 165, 233, 0.3);
+  }
+
   /* ========== LIGHT THEME ========== */
 
   /* Nav */
