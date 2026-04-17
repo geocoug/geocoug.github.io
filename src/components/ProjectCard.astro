@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  url?: string;
+  github?: string;
+  image?: string;
+  delay?: number;
+}
+
+const { title, description, tags, url, github, image, delay = 0 } = Astro.props;
+const href = url || github || "#";
+const delayClass = delay > 0 ? `reveal-delay-${delay}` : "";
+---
+
+<article class={`project-card glow-card group rounded-xl border-transparent transition-all duration-300 flex flex-col reveal ${delayClass} hover:-translate-y-1.5 hover:shadow-xl hover:shadow-accent-500/10`}>
+  <div class="glow-card-inner">
+    {image ? (
+      <a href={href} target="_blank" rel="noopener" class="card-image block overflow-hidden aspect-video bg-slate-800 relative">
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
+    ) : (
+      <a href={href} target="_blank" rel="noopener" class="card-image block aspect-video bg-gradient-to-br from-slate-800 via-slate-800/80 to-accent-500/10 relative flex items-center justify-center">
+        <span class="font-display text-2xl font-bold text-slate-600 group-hover:text-accent-400/60 transition-colors duration-300">{title.slice(0, 2).toUpperCase()}</span>
+      </a>
+    )}
+
+    <div class="h-[2px] bg-gradient-to-r from-accent-500 via-violet-400 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+    <div class="p-5 flex flex-col flex-1">
+      <h3 class="text-lg font-display font-semibold mb-2 group-hover:text-accent-400 transition-colors">
+        {title}
+      </h3>
+      <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-1">
+        {description}
+      </p>
+
+      <div class="flex items-end justify-between gap-3">
+        <div class="flex flex-wrap gap-1.5">
+          {tags.slice(0, 4).map((tag) => (
+            <span class="card-tag text-[11px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700/50 group-hover:border-accent-500/20 group-hover:text-slate-300 transition-colors">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener"
+              aria-label={`${title} on GitHub`}
+              class="text-slate-500 hover:text-accent-400 transition-colors"
+            >
+              <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+          )}
+          {url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener"
+              aria-label={`Visit ${title}`}
+              class="text-slate-500 hover:text-accent-400 transition-colors"
+            >
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

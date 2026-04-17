@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+import aboutImg from "../assets/images/about.png";
+
+const techCategories = [
+  {
+    label: "Languages",
+    labelClass: "text-accent-400",
+    dotClass: "bg-accent-400",
+    items: ["Python", "SQL", "Bash"],
+  },
+  {
+    label: "Frameworks",
+    labelClass: "text-violet-400",
+    dotClass: "bg-violet-400",
+    items: ["Django", "Flask", "FastAPI"],
+  },
+  {
+    label: "Databases",
+    labelClass: "text-emerald-400",
+    dotClass: "bg-emerald-400",
+    items: ["PostgreSQL", "PostGIS", "DuckDB", "SQLite", "Iceberg"],
+  },
+  {
+    label: "Infrastructure",
+    labelClass: "text-amber-400",
+    dotClass: "bg-amber-400",
+    items: ["Docker", "AWS", "GitHub Actions"],
+  },
+];
+---
+
+<section id="about" class="relative">
+  <div class="section relative z-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center reveal">
+        About Me
+      </h2>
+
+      <div class="bento-grid">
+        <!-- Photo card — spans 2 cols, with gradient border effect -->
+        <div class="glow-card md:col-span-2 reveal reveal-delay-1 rounded-xl">
+          <div class="glow-card-inner">
+            <Image
+              src={aboutImg}
+              alt="Caleb Grant"
+              class="w-full h-full object-cover"
+              widths={[320, 480]}
+            />
+          </div>
+        </div>
+
+        <!-- Bio card — spans 2 cols -->
+        <div class="bento-card md:col-span-2 flex flex-col justify-center reveal reveal-delay-2 relative overflow-hidden">
+          <!-- Decorative accent -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-accent-500/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+
+          <h3 class="text-xl mb-3 flex items-center gap-2">
+            <span class="inline-block w-1 h-5 rounded-full bg-gradient-to-b from-accent-400 to-violet-400"></span>
+            Background
+          </h3>
+          <p class="text-slate-400 leading-relaxed">
+            Data engineer and full-stack developer with a strong foundation in
+            Python, SQL, and modern web technologies. My work bridges clean code,
+            robust infrastructure, and intuitive user experience.
+          </p>
+          <p class="text-slate-400 leading-relaxed mt-3">
+            With a background in environmental consulting, I bring domain awareness
+            and a passion for building systems where data quality, automation, and
+            reproducibility are engineering priorities.
+          </p>
+        </div>
+
+        <!-- Tech stack card — spans 3 cols, categorized -->
+        <div class="bento-card md:col-span-3 reveal reveal-delay-3 relative overflow-hidden">
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-violet-500/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+
+          <h3 class="text-lg mb-5 flex items-center gap-2">
+            <span class="inline-block w-1 h-5 rounded-full bg-gradient-to-b from-accent-400 to-violet-400"></span>
+            Tech Stack
+          </h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {techCategories.map((cat) => (
+              <div>
+                <p class={`text-xs font-medium uppercase tracking-wider mb-2.5 ${cat.labelClass}`}>{cat.label}</p>
+                <div class="space-y-2">
+                  {cat.items.map((item) => (
+                    <div class="flex items-center gap-2.5 text-sm text-slate-400 group/item">
+                      <span class={`w-1.5 h-1.5 rounded-full ${cat.dotClass} group-hover/item:scale-150 transition-transform`}></span>
+                      <span class="group-hover/item:text-slate-200 transition-colors">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Education & focus card -->
+        <div class="bento-card md:col-span-1 flex flex-col justify-between reveal reveal-delay-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-20 h-20 bg-emerald-400/5 rounded-full -translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+
+          <div>
+            <h3 class="text-lg mb-3 flex items-center gap-2">
+              <span class="inline-block w-1 h-5 rounded-full bg-gradient-to-b from-accent-400 to-violet-400"></span>
+              Education
+            </h3>
+            <p class="text-sm text-slate-300 font-medium">Washington State University</p>
+            <p class="text-xs text-accent-400 mt-1 font-display">Go Cougs!</p>
+          </div>
+
+          <div class="mt-6">
+            <h3 class="text-lg mb-3 flex items-center gap-2">
+              <span class="inline-block w-1 h-5 rounded-full bg-gradient-to-b from-emerald-400 to-accent-400"></span>
+              Focus
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Environmental Science</span>
+              <span class="chip">Geology</span>
+              <span class="chip">GIS</span>
+              <span class="chip">Geospatial Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
