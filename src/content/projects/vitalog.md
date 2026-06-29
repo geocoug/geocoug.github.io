@@ -6,5 +6,5 @@ url: "https://github.com/geocoug/vitalog"
 github: "https://github.com/geocoug/vitalog"
 tags: ["Python", "DuckDB", "D3.js", "Claude AI"]
 featured: true
-order: 3
+order: 4
 ---

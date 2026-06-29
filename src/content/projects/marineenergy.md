@@ -6,5 +6,5 @@ url: "https://marineenergy.app"
 github: "https://github.com/orgs/marineenergy/repositories"
 tags: ["R", "Shiny", "Web App", "US DOE"]
 featured: true
-order: 4
+order: 5
 ---
